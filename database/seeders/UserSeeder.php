@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
     {
         User::factory()->count(1)->create([
             'name' => 'Rodion Dev',
-            'email' => 'demo@demo.app'
+            'email' => env('APP_TMPLOGIN_EMAIL'),
         ]);
     }
 }
