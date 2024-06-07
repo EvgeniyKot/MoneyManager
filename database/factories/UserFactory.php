@@ -17,11 +17,12 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $ps = env('APP_TMPLOGIN_PASSWORD');
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => bcrypt('12345678'),
+            'password' => bcrypt("$ps"),
             'remember_token' => Str::random(10),
         ];
     }
